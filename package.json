@@ -1,0 +1,24 @@
+{
+  "name": "movie_mern",
+  "version": "1.0.0",
+  "description": "1. React\r 1) Axios:\r - get: used to fetch API\r - delete: used to delete the movie from Favorite Movie(MongoDB database)\r - post: used to add the movie to Favorite Movie(MongoDB database)",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujijava/fav-movie-picker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sujijava/fav-movie-picker/issues"
+  },
+  "homepage": "https://github.com/sujijava/fav-movie-picker#readme"
+}
