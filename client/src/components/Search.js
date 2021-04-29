@@ -22,9 +22,7 @@ const Search = () => {
   useEffect(() => {
     performSearch()
 
-    axios
-      .get('http://localhost:5000/lists/')
-      .then((res) => setNominees(res.data))
+    axios.get('/lists/').then((res) => setNominees(res.data))
   }, [term])
 
   useEffect(() => {

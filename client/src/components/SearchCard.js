@@ -13,7 +13,7 @@ const SearchCard = (props) => {
     // console.log(`${movie.Title} is added`)
     console.log(movie)
     axios
-      .post('http://localhost:5000/lists', movie)
+      .post('/lists', movie)
       .then((res) => console.log(res.data))
       .then(() => history.push('/nominees'))
   }
