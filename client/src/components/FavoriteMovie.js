@@ -10,7 +10,7 @@ export default class FavoriteMovie extends Component {
 
   deleteMyList = (movie) => {
     console.log('will be delete' + movie._id)
-    axios.delete('/lists/' + movie._id)
+    axios.delete('http://localhost:5000/lists/' + movie._id)
     const newList = this.state.myList.filter(
       (element) => element._id !== movie._id
     )
@@ -18,7 +18,7 @@ export default class FavoriteMovie extends Component {
   }
 
   componentDidMount() {
-    axios.get('/lists/').then((response) => {
+    axios.get('http://localhost:5000/lists/').then((response) => {
       this.setState({ myList: response.data })
     })
   }
@@ -51,6 +51,7 @@ export default class FavoriteMovie extends Component {
         <p>Warning: Favorite Movie List is empty</p>
       </Alert>
     )
+
     return (
       <div>{this.state.myList.length === 0 ? nothingListed : initList}</div>
     )

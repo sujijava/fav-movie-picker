@@ -33,5 +33,3 @@ Favorite movie list is stored and managed with MongoDB
 # Technology
 
 #ReactJS #JavaScript #ES6 #NodeJS #ExpressJS #MongoDB #Axios #LifeCycleHooks #LifeCycleMethod #API #RESTfulAPI
-
-test test

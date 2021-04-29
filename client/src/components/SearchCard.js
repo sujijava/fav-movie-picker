@@ -6,10 +6,10 @@ const SearchCard = (movie) => {
   console.log(movie)
 
   const addToMyList = (movie) => {
-    console.log(`${movie.Title} is added`)
+    // console.log(`${movie.Title} is added`)
     console.log(movie)
     axios
-      .post('/lists/', movie)
+      .post('http://localhost:5000/lists', movie)
       .then((res) => console.log(res.data))
   }
 
