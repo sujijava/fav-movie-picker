@@ -24,10 +24,12 @@ export const getList = async (req, res) => {
 export const addList = async (req, res) => {
   const Title = req.body.Title
   const Year = req.body.Year
+  const imdbID = req.body.imdbID
 
   const newListMessage = new ListMessage({
     Title,
     Year,
+    imdbID,
   })
 
   newListMessage

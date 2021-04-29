@@ -3,13 +3,11 @@ import { Navbar, Nav } from 'react-bootstrap'
 
 const NavigationBar = () => {
   return (
-    <Navbar bg='dark' variant='dark'>
-      <Nav>
+    <Navbar bg='primary' variant='dark'>
+      <Navbar.Brand href='/'>Shoppies by Susie</Navbar.Brand>
+      <Nav className='ml-auto'>
         <Nav.Item>
-          <Nav.Link href='/'>Search</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href='/favMovie'>Favorite Movie</Nav.Link>
+          <Nav.Link href='/nominees'>Nominees</Nav.Link>
         </Nav.Item>
       </Nav>
     </Navbar>

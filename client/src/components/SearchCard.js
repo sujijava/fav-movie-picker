@@ -1,9 +1,13 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
-const SearchCard = (movie) => {
-  console.log(movie)
+const SearchCard = (props) => {
+  let history = useHistory()
+  // console.log(props.movie)
+  // console.log(props.disabled)
+  // console.log('searchcard')
 
   const addToMyList = (movie) => {
     // console.log(`${movie.Title} is added`)
@@ -11,6 +15,7 @@ const SearchCard = (movie) => {
     axios
       .post('http://localhost:5000/lists', movie)
       .then((res) => console.log(res.data))
+      .then(() => history.push('/nominees'))
   }
 
   return (
@@ -18,17 +23,18 @@ const SearchCard = (movie) => {
       <Card.Img
         style={{ width: '15rem', height: '10rem' }}
         variant='top'
-        src={movie.movie.Poster}
+        src={props.movie.Poster}
       />
       <Card.Body class='d-flex flex-column'>
         <Card.Title style={{ height: '2rem' }}>
-          <Card.Text>{movie.movie.Title}</Card.Text>
+          <Card.Text>{props.movie.Title}</Card.Text>
         </Card.Title>
-        <Card.Text>Year of Release: {movie.movie.Year}</Card.Text>
+        <Card.Text>Year of Release: {props.movie.Year}</Card.Text>
         <Button
           onClick={() => {
-            addToMyList(movie.movie)
+            addToMyList(props.movie)
           }}
+          disabled={props.disabled}
           variant='dark'
         >
           Add To My List

@@ -3,6 +3,9 @@
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
+  background-image: url('https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=784&q=80.gif');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .add-todo-input,

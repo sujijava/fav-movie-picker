@@ -11,7 +11,7 @@ function App() {
       <NavigationBar></NavigationBar>
       <Container>
         <Route path='/' component={Search} exact></Route>
-        <Route path='/favMovie' component={FavoriteMovie}></Route>
+        <Route path='/nominees' component={FavoriteMovie}></Route>
       </Container>
     </Router>
   )
