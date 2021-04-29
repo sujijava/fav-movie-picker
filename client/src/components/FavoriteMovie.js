@@ -26,29 +26,31 @@ export default class FavoriteMovie extends Component {
   render() {
     const initList = this.state.myList.map((eachMovie, index) => {
       return (
-        <ListGroup key={index}>
-          <ListGroupItem>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-sm-9'>{eachMovie.Title}</div>
-                <div className='col-sm-3'>
-                  <Button
-                    onClick={() => this.deleteMyList(eachMovie)}
-                    variant='outline-danger'
-                  >
-                    <i className='bi bi-trash'></i> Delete
-                  </Button>
+        <div className='container' style={{ marginTop: '1%', opacity: '0.9' }}>
+          <ListGroup key={index}>
+            <ListGroupItem>
+              <div className='container'>
+                <div className='row'>
+                  <div className='col-sm-9'>{eachMovie.Title}</div>
+                  <div className='col-sm-3'>
+                    <Button
+                      onClick={() => this.deleteMyList(eachMovie)}
+                      variant='outline-danger'
+                    >
+                      <i className='bi bi-trash'></i> Delete
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </ListGroupItem>
-        </ListGroup>
+            </ListGroupItem>
+          </ListGroup>
+        </div>
       )
     })
 
     const nothingListed = (
-      <Alert className='mt-3 w-100' variant='success'>
-        <p>Warning: Favorite Movie List is empty</p>
+      <Alert className='mt-3 w-100' variant='primary'>
+        <p>Warning: Nominees List is empty</p>
       </Alert>
     )
 

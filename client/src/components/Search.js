@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Form, CardGroup, Alert } from 'react-bootstrap'
+import { Form, CardGroup, Alert, Toast } from 'react-bootstrap'
 import SearchCard from './SearchCard'
 import { useHistory } from 'react-router-dom'
 
@@ -13,6 +13,11 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([])
   const [nominees, setNominees] = useState([])
   const [duplicatedImdbID, setDuplicatedImdbID] = useState([''])
+  const [showA, setShowA] = useState(true)
+  const [showB, setShowB] = useState(true)
+
+  const toggleShowA = () => setShowA(!showA)
+  const toggleShowB = () => setShowB(!showB)
 
   useEffect(() => {
     performSearch()
@@ -76,13 +81,24 @@ const Search = () => {
   )
 
   const moreThanFive = (
-    <Alert className='w-100' variant='danger'>
-      <p>You have nominated 5 movies. </p>
-    </Alert>
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+      }}
+    >
+      <Toast show={showA} onClose={toggleShowA}>
+        <Toast.Header>
+          <strong className='mr-auto'>Alert</strong>
+        </Toast.Header>
+        <Toast.Body>You have nominated more than five movies! </Toast.Body>
+      </Toast>
+    </div>
   )
 
   return (
-    <div style={{ marginTop: '5%' }}>
+    <div style={{ marginTop: '7%' }}>
       <div>
         <Form>
           <Form.Group>
